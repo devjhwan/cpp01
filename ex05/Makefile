@@ -6,15 +6,15 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/23 04:12:32 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/23 19:44:51 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=megaphone
+NAME=shutUpHarl
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=Megaphone.cpp
+SRCS=main.cpp Harl.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
