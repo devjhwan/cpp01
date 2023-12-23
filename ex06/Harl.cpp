@@ -6,26 +6,13 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 19:44:11 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/23 20:30:54 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/24 00:15:44 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 #include <iostream>
 #include <string>
-
-Harl::Harl(std::string filter)
-{
-	std::string clevel[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-	_filterLevel = 0;
-	while (_filterLevel < 4)
-	{
-		if (clevel[_filterLevel] == filter)
-			break;
-		_filterLevel++;
-	}
-}
 
 void	Harl::debug(void)
 {
@@ -60,16 +47,28 @@ void	Harl::error(void)
 	std::cout << std::endl << std::endl;
 }
 
-void	Harl::complain(void)
+void	Harl::complain(std::string level)
 {
+	int			i;
 	std::string clevel[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*flevel[4])(void) = {&Harl::debug, &Harl::info, \
-										&Harl::warning, &Harl::error};
-	for (int i = _filterLevel; i < 4; i++)
-		(this->*flevel[i])();
-	if (_filterLevel == 4)
+
+	for (i = 0; i < 4; i++)
+		if (clevel[i] == level)
+			break ;
+	switch (i)
 	{
-		std::cout << "[ Probably complaining about insignificant problems ]";
-		std::cout << std::endl;
+		case 0:
+			this->debug();
+		case 1:
+			this->info();
+		case 2:
+			this->warning();
+		case 3:
+		{
+			this->error();
+			break;
+		}
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 19:44:07 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/23 20:31:08 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/24 00:14:49 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@
 class Harl
 {
 	private:
-		int		_filterLevel;
 		void	debug(void);
 		void	info(void);
 		void	warning(void);
 		void	error(void);
 	public:
-		Harl(std::string filter);
-		void	complain(void);
+		void	complain(std::string level);
 };
 
 #endif
