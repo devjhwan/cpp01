@@ -6,15 +6,15 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/23 04:12:41 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/23 20:14:39 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=megaphone
+NAME=harlFilter
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=Megaphone.cpp
+SRCS=main.cpp Harl.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
@@ -29,11 +29,11 @@ all: $(OBJDIR) $(NAME)
 
 $(NAME): $(OBJS) Makefile
 	$(CC) $(CFLAGS) $(EXTRAFLAGS) -o $@ $(OBJS) $(LIBRARIES)
-	echo "(CPP01-EX06)COMPILING $@"
+	echo "(CPP01-EX05)COMPILING $@"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp Makefile 
 	$(CC) $(DEPFLAGS) $(CFLAGS) $(EXTRAFLAGS) $(INCLUDE) -c -o $@ $<
-	echo "(CPP01-EX06)COMPILING $@"
+	echo "(CPP01-EX05)COMPILING $@"
 
 $(OBJDIR): Makefile
 	mkdir -p $@
