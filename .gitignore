@@ -4,3 +4,5 @@ ex00/zombie
 ex01/zombieHorde
 ex02/brain
 ex03/noviolence
+ex04/replaceString
+ex04/*.replace

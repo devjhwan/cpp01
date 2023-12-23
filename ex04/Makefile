@@ -6,15 +6,15 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/23 04:12:35 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/23 19:35:43 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=megaphone
+NAME=replaceString
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=Megaphone.cpp
+SRCS=main.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
@@ -40,6 +40,7 @@ $(OBJDIR): Makefile
 
 clean:
 	rm -rf $(OBJDIR)
+	rm -rf *.replace
 
 fclean: clean
 	rm -f $(NAME)
